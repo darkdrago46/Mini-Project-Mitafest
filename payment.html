@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css"> 
+</head>
+<script>
+function check(){
+var u=document.getElementById("uid").value;
+var p=document.getElementById("pwd").value;
+if(u.length==0)
+window.alert("Username cannot be null");
+if(p.length==0)
+window.alert("Password cannot be null");
+else{
+var c = String.fromCharCode(Math.floor(Math.random()*(90-65))+65);
+var str=Math.floor(Math.random()*10000);
+var ticket=c+str;
+window.alert("PAYMENT SUCCESSFULL");
+document.getElementById("result").innerHTML="ORDER DETAILS<br>NAME:"+localStorage.getItem("textvalue1")+"<br>EMAIL:"+localStorage.getItem("textvalue2")+"<br>PHONE-NO:"+localStorage.getItem("textvalue3")+"<br>COLLEGE:"+localStorage.getItem("textvalue4")+"<br>WORKSHOP PREFFERED:"+localStorage.getItem("textvalue5")+"<br>PASS PREFFERED:"+localStorage.getItem("textvalue6")+"<br>YOUR BOOKING TICKET ID:"+ticket;
+}
+}
+</script>
+<body style="background-color:powderblue";>
+<h1>PAYMENT</h1>
+<form>
+<fieldset>
+Username:
+<input type="text" name="userid" id="uid" required ><br><br>
+Password:
+<input type="password" name="passwd" id="pwd" required><br><br>
+</fieldset>
+</form>
+<br>
+<button type="button" onclick="check()">SUBMIT</button>
+<br><br><br>     
+<p id="result"></p>
+</body>
+</html>

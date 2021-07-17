@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<script>
+function func(){
+var a=document.getElementById("em").value;
+var b=document.getElementById("ph").value;
+var c=parseInt(document.getElementById("ng").value);
+var d=parseInt(document.getElementById("d").value);
+var e=document.getElementById("tkt").value;
+var f=0;
+for(var i=0;i<a.length;i+=1)
+{if(a[i]=='@')
+f+=1;
+}
+if(f!=0 && b.length==10 && c!=0 && d!=0 && (e.length==5 && e[0]>="A" && e[0]<="Z"))
+window.alert("Registeration successfull");
+else{if(f==0)
+window.alert("Invalid Email-Id");
+if(b.length!=10)
+window.alert("Invalid Phone-No");
+if(c==0||d==0)
+window.alert("Number of days/Number of guests can't be zero");
+if(e.length!=5 || !(e[0]>="A" && e[0]<='Z'))
+window.alert("Invalid Ticket-Id");
+}
+}
+</script>
+
+<body style="background-color:#6a5acd";>
+<a style="font-size:200%"; href="mitafest 2021.html">BACK</a>
+<marquee><h1>ACCOMODATION<h1></marquee>
+<form>
+<fieldset>
+<legend><h1>DETAILS</h1></legend>
+Name:
+<input type="text" name="Name" required><br><br><br>
+Email:
+<input type="text" name="Email-Id" id="em" required><br><br><br>
+Contact:
+<input type="number" name="Phone" id="ph" required><br><br><br>
+College:
+<input type="text" name="clg" required><br><br><br>
+Number of Guests:
+<input type="number" name="num" id="ng" required><br><br><br>
+Number of Days:
+<input type="number" name="day" id="d" required><br><br><br>
+Mifafest Ticket Id:
+<input type="text" name="tkt" id="tkt" required><br><br><br>
+
+</fieldset>
+</form>
+<button type="button" onclick="func()">SUBMIT</button>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<script>
+function validate(){
+var a=document.getElementById("nme").value;
+localStorage.setItem("textvalue1",a);
+var b=document.getElementById("em").value;
+localStorage.setItem("textvalue2",b);
+var c=document.getElementById("ph").value;
+localStorage.setItem("textvalue3",c);
+var d=document.getElementById("clg").value;
+localStorage.setItem("textvalue4",d);
+var e=document.getElementById("ws").value;
+localStorage.setItem("textvalue5",e);
+var f=document.getElementById("ep").value;
+localStorage.setItem("textvalue6",f);
+var bill=0;
+if(c.length!=10)
+window.alert("Invalid Phone-No");
+if(a.length==0)
+window.alert("Invalid Name");
+if(b.length==0)
+window.alert("Invalid Email-Id");
+if(d.length==0)
+window.alert("Invalid College Name");
+else{
+if(e=="Android App Development")
+bill+=600;
+else if(e=="Ethical Hacking")
+bill+=700;
+else if(e=="Web Development" || e=="3-D Printing")
+bill+=800;
+else if(e=="UX/UI Designing")
+bill+=1000;
+if(f=="eventpass")
+bill+=200;
+else if(f=="proshow")
+bill+=600;
+else if(f=="both")
+bill+=800;
+window.alert("AMOUNT TO BE PAID "+ bill);
+document.getElementById("result").innerHTML="CLINK ON THE LINK BELOW TO PROCEED TO THE PAYMENT WINDOW";
+}
+}
+</script>
+<body style="background-color:lightgrey";>
+<a style="font-size:200%"; href="mitafest 2021.html">BACK</a>
+<marquee><h1>TICKET BOOKING</h1></marquee>
+<form >
+<fieldset>
+<legend>BOOKING DETAILS:</legend>
+Name:
+<input type="text" name="nme" id="nme" required><br><br>
+Email-Id:
+<input type="text" name="em" id="em" required><br><br> 
+Phone-No:
+<input type="number" name="phone" id="ph" required><br><br> 
+College-Name:
+<input type="text" name="college" id="clg" required><br><br>
+Choose a Workshop:
+<select id="ws" name="workshops">
+<option value="Android App Development">Android App Development</option>
+<option value="Ethical Hacking">Ethical Hacking</option>
+<option value="Web Development">Web Development</option>
+<option value="UX/UI Designing">UX/UI Designing</option>
+<option value="3-D Printing">3-D Printing</option>
+<option value="nil">NIL</option>
+</select>
+<br><br>
+Choose a Pass:
+<select id="ep" name="pass">
+<option value="eventpass">All Event Pass</option>
+<option value="proshow">Proshows Pass</option>
+<option value="both">All Event & Proshows Pass</option>
+</select>
+<br><br>
+</fieldset>
+</form>
+<button type="button" onclick="validate()">SUBMIT</button>
+<br><br>
+<p id="result"></p>
+<a href="payment.html">NET BANKING</a>
+</body>
+</html>
+
